@@ -5,7 +5,7 @@ class Loading extends Component {
   render() {
     return (
       <div className="App">
-        <Spinner animation="border" />
+        {/* <Spinner animation="border" /> */}
         <span className="sr-only">Carregando...</span>
       </div>
     );
