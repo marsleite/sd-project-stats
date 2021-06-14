@@ -7,10 +7,12 @@ class DestinyLibrary extends Component {
     this.state = {
       searchText: '',
       selectedConsole: '1',
-      stats: undefined,
+      stats: {},
+      gamerName: '',
     };
     this.handleGeneric = this.handleGeneric.bind(this);
     this.addApi = this.addApi.bind(this);
+    this.pegando = this.pegando.bind(this)
   }
 
   handleGeneric({ target }) {
@@ -35,11 +37,22 @@ class DestinyLibrary extends Component {
     const responseName = await getName.json()
     this.setState({
       stats: responseName,
-    })  
+    })
+    this.pegando()
+  }
+
+  async pegando() {
+    const { stats } = this.state
+    const testando = Object.entries(stats)[0]
+    const { displayName } = testando[1][0]
+    console.log(testando)
+    this.setState({
+      gamerName: displayName,
+    })
   }
 
   render() {
-    const { searchText, selectedConsole } = this.state;
+    const { searchText, selectedConsole, gamerName } = this.state;
     return (
       <div>
         <SearchBar 
@@ -54,6 +67,9 @@ class DestinyLibrary extends Component {
         >
           Find
         </button>
+        <div>
+          <h2>{ gamerName }</h2>
+        </div>
       </div>
     )
   }
