@@ -17,13 +17,14 @@ class DestinyList extends Component {
   }
 
   // /Destiny2/1/Account/4611686018431279085/Stats/
+  // const API_NAME = 'https://www.bungie.net/platform/User/GetBungieNetUserById/20379188/'
 
   async gettingBungieApi() {
     this.setState(
       { loading: true },
       async () => {
         const API_URL = 'https://www.bungie.net/platform/Destiny2/1/Account/4611686018431279085/Stats/'
-        const API_NAME = 'https://www.bungie.net/platform/User/GetBungieNetUserById/20379188/'
+        const API_NAME = 'https://www.bungie.net/Platform/User/SearchUsers/?q=Hymnsz'
         const header = {
           method: 'GET',
           headers: {
@@ -51,10 +52,10 @@ class DestinyList extends Component {
     console.log(displayUser)
     const { mergedAllCharacters } = Object.entries(stats)[0][1]
     const { results: { allPvP: { allTime } } } = mergedAllCharacters;
-    const { Response: { displayName } } = displayUser;
+    // const { Response: { displayName } } = displayUser;
     return (
       <div className="App-header">
-        <h2>{ displayName }</h2>
+        <h2>displayName</h2>
         <DestinyStats stats={ allTime } />
       </div>
     )
