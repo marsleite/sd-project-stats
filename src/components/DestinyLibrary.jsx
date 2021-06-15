@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LeaderBoard from './LeaderBoard';
 import SearchBar from './SearchBar';
 
 class DestinyLibrary extends Component {
@@ -9,6 +10,7 @@ class DestinyLibrary extends Component {
       selectedConsole: '1',
       stats: {},
       gamerName: '',
+      loading: false,
     };
     this.handleGeneric = this.handleGeneric.bind(this);
     this.addApi = this.addApi.bind(this);
@@ -23,8 +25,8 @@ class DestinyLibrary extends Component {
   }
 
   async addApi() {
-    const { searchText } = this.state
-    const API_Name = `https://www.bungie.net/Platform/User/SearchUsers/?q=${searchText}`;
+    const { searchText, selectedConsole } = this.state
+    const API_Name = `https://www.bungie.net/Platform/Destiny2/SearchDestinyPlayer/${ selectedConsole }/${ searchText }/`;
     const header = {
       method: 'GET',
       headers: {
@@ -40,19 +42,24 @@ class DestinyLibrary extends Component {
     })
     this.pegando()
   }
+  
 
   async pegando() {
     const { stats } = this.state
-    const testando = Object.entries(stats)[0]
-    const { displayName } = testando[1][0]
-    console.log(testando)
+    // const testando = Object.entries(stats)[0]
+    // const data = testando[1][0]
+    const data = stats.Response;
+    const { displayName, membershipId } = data[0]
+
     this.setState({
       gamerName: displayName,
+      member: membershipId,
+      loading: true,
     })
   }
 
   render() {
-    const { searchText, selectedConsole, gamerName } = this.state;
+    const { searchText, selectedConsole, gamerName, member, loading } = this.state;
     return (
       <div>
         <SearchBar 
@@ -69,6 +76,7 @@ class DestinyLibrary extends Component {
         </button>
         <div>
           <h2>{ gamerName }</h2>
+          { loading === true ? <LeaderBoard est={ member } /> : <span></span> }
         </div>
       </div>
     )

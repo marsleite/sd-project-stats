@@ -28,7 +28,7 @@ class SearchBar extends Component {
               >
                 <option value="1">Xbox</option>
                 <option value="2">PSN</option>
-                <option value="254">Steam</option>
+                <option value="3">Steam</option>
               </select>
             </label>
           </label>
