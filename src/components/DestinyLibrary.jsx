@@ -71,9 +71,10 @@ class DestinyLibrary extends Component {
         />
         <button
           type="button"
+          className="btn_busca"
           onClick={ this.addApi }      
         >
-          Find
+          Buscar
         </button>
         <div>
           <h2>{ gamerName }</h2>

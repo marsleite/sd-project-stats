@@ -18,15 +18,17 @@ class SearchBar extends Component {
               onChange={ onSearchTextChange }
               type="text"
               value={ searchText }
-              placeholder="gamertag ou psnID"
+              placeholder="Guardião"
+              className="inputbusca"
             />
             <label>
               <select
                 name="selectedConsole"
                 onChange={ onSelectedConsoleChange }
                 value={ selectedConsole }
+                className="inputbusca"
               >
-                <option value="1">Xbox</option>
+                <option value="1">XBOX</option>
                 <option value="2">PSN</option>
                 <option value="3">Steam</option>
               </select>

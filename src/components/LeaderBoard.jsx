@@ -47,7 +47,7 @@ class LeaderBoard extends Component {
     const { wins } = this.state;
     return (
       <div>
-        <span><b>Win:</b> { wins }</span>
+        <span><b>Vitórias no crisol:</b> { wins }</span>
       </div>
     )
   }
