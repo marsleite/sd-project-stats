@@ -25,6 +25,9 @@ class DestinyLibrary extends Component {
   }
 
   async addApi() {
+    this.setState({
+      loading: false,
+    })
     const { searchText, selectedConsole } = this.state
     const API_Name = `https://www.bungie.net/Platform/Destiny2/SearchDestinyPlayer/${ selectedConsole }/${ searchText }/`;
     const header = {
@@ -46,8 +49,6 @@ class DestinyLibrary extends Component {
 
   async pegando() {
     const { stats } = this.state
-    // const testando = Object.entries(stats)[0]
-    // const data = testando[1][0]
     const data = stats.Response;
     const { displayName, membershipId } = data[0]
 

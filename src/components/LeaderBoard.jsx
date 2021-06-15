@@ -29,12 +29,26 @@ class LeaderBoard extends Component {
     this.setState({
       estatistica: response,
     })
+    this.atualizandoStats()
+  }
+
+  async atualizandoStats() {
+    const { estatistica } = this.state
+    const data = estatistica.Response
+    const { mergedAllCharacters: { results: { allPvP: { allTime } } } } = data
+    const won = allTime.activitiesWon.basic.displayValue
+
+    this.setState({
+      wins: won,
+    })
   }
 
   render() {
-
+    const { wins } = this.state;
     return (
-      <div>hauhauh</div>
+      <div>
+        <span><b>Win:</b> { wins }</span>
+      </div>
     )
   }
 }
