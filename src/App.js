@@ -14,7 +14,7 @@ function App() {
       <DestinyLibrary />
      </div></div>
     </div>
-    <div className="rodape">Keep in touch, for more info please visit to our <a href="#">Twitter</a> account</div>
+    <div className="rodape">Keep in touch, for more info please visit to our <a href="#">Twitter</a> account or contact admin@thetower.com</div>
   </div>
   );
 }

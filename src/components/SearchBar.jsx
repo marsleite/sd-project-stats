@@ -30,7 +30,7 @@ class SearchBar extends Component {
               onChange={ onSearchTextChange }
               type="text"
               value={ searchText }
-              placeholder="Guardião"
+              placeholder="Guardian"
               className="inputbusca"
             />
           </label>
