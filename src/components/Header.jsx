@@ -4,7 +4,8 @@ class Header extends Component {
   render() {
     return (
       <header className="container">
-        <div className="logo"><a href="#">The Tower Project</a></div>
+        <div className="simbolo"></div>
+        <div className="logo"><a href="#">The</a><a href="#" className="logo_negrito">Tower</a></div>
       </header>
     )
   }

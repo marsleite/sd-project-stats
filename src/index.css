@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300&family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 200;
 }
 
 body {
   margin: 0;
-  background: #131313;
+  background: #16121f;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

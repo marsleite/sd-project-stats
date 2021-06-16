@@ -13,6 +13,18 @@ class SearchBar extends Component {
       <div>
         <form>
           <label htmlFor="ctl">
+          <label>
+              <select
+                name="selectedConsole"
+                onChange={ onSelectedConsoleChange }
+                value={ selectedConsole }
+                className="labelbusca"
+              >
+                <option value="1">XBOX</option>
+                <option value="2">PSN</option>
+                <option value="3">Steam</option>
+              </select>
+            </label>
             <input 
               name="searchText"
               onChange={ onSearchTextChange }
@@ -21,18 +33,6 @@ class SearchBar extends Component {
               placeholder="Guardião"
               className="inputbusca"
             />
-            <label>
-              <select
-                name="selectedConsole"
-                onChange={ onSelectedConsoleChange }
-                value={ selectedConsole }
-                className="inputbusca"
-              >
-                <option value="1">XBOX</option>
-                <option value="2">PSN</option>
-                <option value="3">Steam</option>
-              </select>
-            </label>
           </label>
         </form>
       </div>
