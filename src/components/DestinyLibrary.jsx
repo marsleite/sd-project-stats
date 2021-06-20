@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LeaderBoard from './LeaderBoard';
 import SearchBar from './SearchBar';
+import NotFound from './NotFound';
 
 class DestinyLibrary extends Component {
   constructor() {
@@ -38,25 +39,37 @@ class DestinyLibrary extends Component {
         'Content-Type': 'application/json'
       }
     }
+
+    
     const getName = await fetch(API_Name, header);
     const responseName = await getName.json()
+
     this.setState({
       stats: responseName,
     })
-    this.pegando()
+
+    try {
+      this.pegando()
+    } catch {
+      <NotFound />
+    }
+    
   }
   
 
   async pegando() {
     const { stats } = this.state
     const data = stats.Response;
-    const { displayName, membershipId } = data[0]
-
-    this.setState({
-      gamerName: displayName,
-      member: membershipId,
-      loading: true,
-    })
+    if (data) {
+      const { displayName, membershipId } = data[0]
+      this.setState({
+        gamerName: displayName,
+        member: membershipId,
+        loading: true,
+      })
+    } else {
+      throw new Error("error");
+    }
   }
 
   render() {
