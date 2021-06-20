@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './components/Header';
+import DestinyLibrary from './components/DestinyLibrary';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <div className="App">
+    <div className="cont">
+     <Header />
+     <div className="informacoes">
+     <h1 className="apresentacao">Destiny stats made easy and quick <br></br>Try searching your guardian below</h1>
+     <div className="info">
+      <DestinyLibrary />
+     </div></div>
     </div>
+    <div className="rodape">Keep in touch, for more info please visit to our <a href="#">Twitter</a> account or contact admin@thetower.com</div>
+  </div>
   );
 }
 
